@@ -17,3 +17,18 @@ class Complex(object):
     def multiply(self, complex):
         self.real = (self.real * complex.real) - (self.imag * complex.imag)
         self.imag = (self.real * complex.imag) + (complex.real * self.imag)
+
+    def getReal(self):
+        return self.real
+
+    def getImaginary(self):
+        return self.imag
+
+    def toString(self):
+        if(self.imag < 0):
+            return str(self.real) + " - i" + str(self.imag*-1)
+        elif(self.imag is 0):
+            return str(self.real)
+        else:
+            return str(self.real) + " + i" + str(self.imag)
+            
