@@ -2,6 +2,9 @@ class polynomial(object):
     def __init__(self):
         self.x = 0
 
+    def fastMultiply(self, A, B):
+        print("Not implemented!")
+
     # A - array of m elements
     # B - array of n elements
     def bruteForceMultiply(self, A, B):
