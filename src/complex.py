@@ -1,3 +1,5 @@
+from math import sqrt, pow
+
 class Complex(object):
     def __init__(self, real, imag):
         self.real = real
@@ -23,6 +25,9 @@ class Complex(object):
 
     def getImaginary(self):
         return self.imag
+
+    def getMagnitude(self):
+        return sqrt(pow(self.real, 2) + pow(self.imag, 2))
 
     def toString(self):
         if(self.imag < 0):
