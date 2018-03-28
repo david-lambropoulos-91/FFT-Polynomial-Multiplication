@@ -10,8 +10,13 @@ def main(argc, argv):
 
     # Start main program
     poly = polynomial()
-    
-    poly.bruteForceMultiply([1, 0, 1], [1, 2, 3])
+
+    poly.bruteForceMultiply([1, 0], [1, 2])
+
+    try:
+        poly.fastMultiply([1, 0], [1, 2])
+    except Exception as e:
+        print(e)
 
     # Display execution time
     print("\n--- %s seconds ---\n" % (time() - start_time))

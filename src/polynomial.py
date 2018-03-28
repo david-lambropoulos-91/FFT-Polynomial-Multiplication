@@ -1,9 +1,29 @@
+from fft import fft
+
 class polynomial(object):
     def __init__(self):
         self.x = 0
 
+    # A - array of m elements
+    # B - array of n elements
     def fastMultiply(self, A, B):
-        print("Not implemented!")
+        FFT = fft()       
+        try:
+            FA = FFT.fastFourierTransform(A)    # O(nlogn)
+            FB = FFT.fastFourierTransform(B)    # O(nlogn)
+            FC = []
+        except Exception as e:
+            print(e)
+            exit(0)
+
+        print(FA)
+
+        # O(n)
+        # for i in range(0, len(A)):
+        #     FC.append(FA[i].multiply(FB[i]))
+
+        # C = 1/len(A) * FFT.inverseFastFourierTransform(FC)
+        # print(C)
 
     # A - array of m elements
     # B - array of n elements
