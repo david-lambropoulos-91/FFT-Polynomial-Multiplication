@@ -29,6 +29,19 @@ class Complex(object):
     def getMagnitude(self):
         return sqrt(pow(self.real, 2) + pow(self.imag, 2))
 
+    # (1+2i)^-1 = 1/(1+2i)
+    def getInverse(self):
+        denominator = pow(self.real, 2) + pow(self.imag, 2)
+
+        self.real /= denominator
+        self.imag *= -1
+        self.imag /=denominator
+
+    def complexSquare(self):    
+            temp = self.real
+            self.real = pow(self.real, 2) + pow(self.imag, 2)
+            self.imag = 2*temp*self.imag
+
     def toString(self):
         if(self.imag < 0):
             return str(self.real) + " - i" + str(self.imag*-1)
