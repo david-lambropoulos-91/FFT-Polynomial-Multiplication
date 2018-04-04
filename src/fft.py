@@ -1,20 +1,54 @@
 from complex import Complex
 from math import cos, sin, pi, pow
+from linecache import checkcache, getline
+from sys import exc_info
+from inspect import stack
+from traceback import print_stack
 
 class fft(object):
     def __init__(self):
         self.x = 0
+
+    def printException(self, printStack=False):
+        # Returns thread and current frame stack specifc information. 
+        # (Exception type, Exception parameter, Traceback object)
+        exceptionType, exceptionObject, traceBack = exc_info()
+
+        # Get frame object at this level
+        frame = traceBack.tb_frame
+
+        # Get name of caller function
+        function = stack()[1][3]
+
+        # Get current line number in Python source code
+        lineno = traceBack.tb_lineno
+
+        # Get name of the file where error occurred via code object via the frame object
+        filename = frame.f_code.co_filename
+
+        # Get line lineno from file named filename. On error returns ''
+        checkcache(filename)
+        line = getline(filename, lineno, frame.f_globals)
+
+        # Get name of the exception type
+        exceptionName = exceptionType.__name__
+        
+        # Display error message
+        print('[{}: {}] caused by "{}", at line {} in function {} in file {}'.format(exceptionName, exceptionObject, line.strip(), lineno, function, filename))
+        
 
     def getRootOfUnity(self, size):
         return Complex(cos(2*pi/size), sin(2*pi/size))
 
     def fastFourierTransform(self, polynomial):
         size = len(polynomial)
+        print(size)
 
         return self.__fastFourierTransform(size, polynomial, self.getRootOfUnity(size))
 
     def __fastFourierTransform(self, size, polynomial, rootOfUnity):
         print("size = " + str(size))
+        print("w = " + rootOfUnity.toString())
         if size is 1:
             print(polynomial)
             return polynomial
@@ -35,10 +69,10 @@ class fft(object):
             print("odd: " + str(oddCoefficients))
             # print("root of unity: " + rootOfUnity.toString())
 
-            rootOfUnity.complexSquare()            
+            # rootOfUnity.complexSquare()           
 
-            FEven = self.__fastFourierTransform(int(size/2), evenCoefficients, rootOfUnity)
-            FOdd = self.__fastFourierTransform(int(size/2), oddCoefficients, rootOfUnity)
+            FEven = self.__fastFourierTransform(int(size/2), evenCoefficients, rootOfUnity.multiply2(rootOfUnity))
+            FOdd = self.__fastFourierTransform(int(size/2), oddCoefficients, rootOfUnity.multiply2(rootOfUnity))
         
             try:
                 F = []
@@ -49,22 +83,20 @@ class fft(object):
                 x = Complex(1,0)
 
                 while j < size/2:
-                #     print("Here")
-                    # print(F[j].toString())
-                    c1 = Complex(FEven[j], 0)
-                    print("c1 = " + c1.toString())
-                    # F[j].add(c1)
-                    # .add( x.multiply( Complex( FOdd[j], 0 ) ) ) )
-                #     print("Here2")
-                #     F[j+size/2].add(Complex(FEven[j], 0).subtract(x.multiply(Complex(FOdd[j], 0))))
-                #     print("Here3")
-                #     x.multiply(rootOfUnity)
+                    temp = x.multiply2(Complex(FOdd[j],0))
+                    print("temp = " + temp.toString())
+                    F[j] = Complex(FEven[j],0).add2(temp).getReal()
+
+                    temp = x.multiply2(Complex(FOdd[j],0))
+                    F[j+int(size/2)] = Complex(FEven[j],0).subtract2(temp).getReal()
+                
+                    x.multiply(rootOfUnity)
                     j += 1
             except Exception as e:
-                print(e)
+                self.printException()
         return F
 
     def inverseFastFourierTransform(self, polynomial):
         size = len(polynomial)
 
-        return self.__fastFourierTransform(size, polynomial, self.getRootOfUnity(size).getInverse())
+        return self.__fastFourierTransform(size, polynomial, self.getRootOfUnity(size).getInverse2())

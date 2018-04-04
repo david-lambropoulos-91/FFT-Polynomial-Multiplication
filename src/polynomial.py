@@ -16,13 +16,15 @@ class polynomial(object):
             print(e)
             exit(0)
 
-        print(FA)
-
-        # O(n)
-        # for i in range(0, len(A)):
-        #     FC.append(FA[i].multiply(FB[i]))
-
-        # C = 1/len(A) * FFT.inverseFastFourierTransform(FC)
+        try:
+            print("\nSTARTING FC\n")
+            # O(n)
+            for i in range(0, len(A)):
+                # print(FA[i].multiply2(FB[i]).toString())
+                FC.append(FA[i]*FB[i])
+            C = 1/len(A) * FFT.inverseFastFourierTransform(FC)
+        except Exception as e:
+            print(e)
         # print(C)
 
     # A - array of m elements
