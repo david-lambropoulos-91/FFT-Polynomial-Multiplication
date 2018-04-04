@@ -10,15 +10,24 @@ class Complex(object):
         self.real += complex.real
         self.imag += complex.imag
     
+    def add2(self, complex):
+        return Complex(self.real + complex.real, self.imag + complex.imag)
+
     # (a+ib) + (c+id) = ((a-c) + i(b-d))
     def subtract(self, complex):
         self.real -= complex.real
         self.imag -= complex.imag
 
+    def subtract2(self, complex):
+        return Complex(self.real - complex.real, self.imag - complex.imag)
+
     # (a+ib)(c+id) = (ac-bd) + i(ad + cb)
     def multiply(self, complex):
         self.real = (self.real * complex.real) - (self.imag * complex.imag)
         self.imag = (self.real * complex.imag) + (complex.real * self.imag)
+
+    def multiply2(self,complex):
+        return Complex((self.real * complex.real) - (self.imag * complex.imag), (self.real * complex.imag) + (complex.real * self.imag))
 
     def getReal(self):
         return self.real
@@ -36,6 +45,11 @@ class Complex(object):
         self.real /= denominator
         self.imag *= -1
         self.imag /=denominator
+
+    def getInverse2(self):
+        denominator = pow(self.real, 2) + pow(self.imag, 2)
+        
+        return Complex(self.real/denominator, -1*self.imag/denominator)
 
     def complexSquare(self):    
             temp = self.real
