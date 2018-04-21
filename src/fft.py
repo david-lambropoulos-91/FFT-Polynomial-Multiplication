@@ -40,26 +40,42 @@ class fft(object):
     def getRootOfUnity(self, size):
         return Complex(cos(2*pi/size), sin(2*pi/size))
 
-    def convertPolynomial(self, polynomial):
+    def convertPolynomial(self, polynomial, newSize):
         newPoly = []
 
-        for coefficient in polynomial:
-            newPoly.append(Complex(coefficient, 0))
+        i = 0
+        try:    
+            for coefficient in polynomial:
+                newPoly.append(Complex(coefficient, 0))
+                i += 1
+
+            while i <= newSize:
+                newPoly.append(Complex(0, 0))
+
+                i += 1
+        except:
+            self.printException()
+            exit(1)
 
         return newPoly 
 
-    def fastFourierTransform(self, polynomial):
+    def fastFourierTransform(self, polynomial, newSize):
         size = len(polynomial)
 
-        print(size)
+        newPolynomial = self.convertPolynomial(polynomial, newSize)
 
-        return self.__fastFourierTransform(size, self.convertPolynomial(polynomial), self.getRootOfUnity(size))
+        for element in newPolynomial:
+            print(element.toString())
+
+        # exit(1)
+
+        return self.__fastFourierTransform(len(newPolynomial), newPolynomial, self.getRootOfUnity(len(newPolynomial)))
 
     def __fastFourierTransform(self, size, polynomial, rootOfUnity):
         print("size = " + str(size))
         print("w = " + rootOfUnity.toString())
+
         if size is 1:
-            print(polynomial)
             return polynomial
         else:
             evenCoefficients = []

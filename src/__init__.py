@@ -15,10 +15,10 @@ def main(argc, argv):
     poly.bruteForceMultiply([1, 0, 1, 3], [1, 2, 1, 3])
     print("\nUsing FFT")
 
-    # try:
-    #     poly.fastMultiply([1, 0, 1, 3], [1, 2, 1, 3])
-    # except Exception as e:
-    #     print(e)
+    try:
+        poly.fastMultiply([1, 0, 1, 3], [1, 2, 1, 3])
+    except Exception as e:
+        print(e)
 
     # Display execution time
     print("\n--- %s seconds ---\n" % (time() - start_time))
