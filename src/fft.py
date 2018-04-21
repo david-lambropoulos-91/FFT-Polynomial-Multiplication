@@ -40,11 +40,20 @@ class fft(object):
     def getRootOfUnity(self, size):
         return Complex(cos(2*pi/size), sin(2*pi/size))
 
+    def convertPolynomial(self, polynomial):
+        newPoly = []
+
+        for coefficient in polynomial:
+            newPoly.append(Complex(coefficient, 0))
+
+        return newPoly 
+
     def fastFourierTransform(self, polynomial):
         size = len(polynomial)
+
         print(size)
 
-        return self.__fastFourierTransform(size, polynomial, self.getRootOfUnity(size))
+        return self.__fastFourierTransform(size, self.convertPolynomial(polynomial), self.getRootOfUnity(size))
 
     def __fastFourierTransform(self, size, polynomial, rootOfUnity):
         print("size = " + str(size))
@@ -83,17 +92,18 @@ class fft(object):
                 x = Complex(1,0)
 
                 while j < size/2:
-                    temp = x.multiply2(Complex(FOdd[j],0))
+                    temp = x.multiply2(FOdd[j])
                     print("temp = " + temp.toString())
-                    F[j] = Complex(FEven[j],0).add2(temp).getReal()
+                    F[j] = FEven[j].add2(temp)
 
-                    temp = x.multiply2(Complex(FOdd[j],0))
-                    F[j+int(size/2)] = Complex(FEven[j],0).subtract2(temp).getReal()
+                    temp = x.multiply2(FOdd[j])
+                    F[j+int(size/2)] = FEven[j].subtract2(temp)
                 
                     x.multiply(rootOfUnity)
                     j += 1
-            except Exception as e:
+            except:
                 self.printException()
+                exit(1)
         return F
 
     def inverseFastFourierTransform(self, polynomial):

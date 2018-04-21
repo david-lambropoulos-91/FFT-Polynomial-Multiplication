@@ -9,7 +9,10 @@ class polynomial(object):
     def fastMultiply(self, A, B):
         FFT = fft()       
         try:
+            print("Starting A")
             FA = FFT.fastFourierTransform(A)    # O(nlogn)
+            
+            print("\nStarting B\n")
             FB = FFT.fastFourierTransform(B)    # O(nlogn)
             FC = []
         except Exception as e:
@@ -21,10 +24,18 @@ class polynomial(object):
             # O(n)
             for i in range(0, len(A)):
                 # print(FA[i].multiply2(FB[i]).toString())
-                FC.append(FA[i]*FB[i])
-            C = 1/len(A) * FFT.inverseFastFourierTransform(FC)
+                FC.append(FA[i].multiply2(FB[i]))
+            C = FFT.inverseFastFourierTransform(FC)
+
+            for element in C:
+                element.multiply(1/len(A))
+
+
+            print("ELEMENTS IN C")
+            for element in C:
+                print(element.toString())
         except Exception as e:
-            print(e)
+            FFT.printException()
         # print(C)
 
     # A - array of m elements
