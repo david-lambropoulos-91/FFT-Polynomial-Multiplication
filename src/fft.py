@@ -90,8 +90,8 @@ class fft(object):
                     oddCoefficients.append(polynomial[i])
 
             print("polynomial: " + str([i.toString() for i in polynomial]))
-            print("even: " + str(evenCoefficients))
-            print("odd: " + str(oddCoefficients))
+            print("even: " + str([i.toString() for i in evenCoefficients]))
+            print("odd: " + str([i.toString() for i in oddCoefficients]))
             # print("root of unity: " + rootOfUnity.toString())
 
             # rootOfUnity.complexSquare()           
