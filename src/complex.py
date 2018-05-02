@@ -49,7 +49,8 @@ class Complex(object):
     def getInverse2(self):
         denominator = pow(self.real, 2) + pow(self.imag, 2)
         
-        return Complex(self.real/denominator, -1*self.imag/denominator)
+        #return Complex(self.real/denominator, -1*self.imag/denominator)
+        return Complex(self.real, -1*self.imag)
 
     def complexSquare(self):    
             temp = self.real
@@ -58,9 +59,19 @@ class Complex(object):
 
     def toString(self):
         if(self.imag < 0):
-            return str(self.real) + " - i" + str(self.imag*-1)
+            if -1*self.imag < 0.000001:
+                return str(self.real)
+            else:
+                return str(self.real) + " - i" + str(self.imag*-1)
         elif(self.imag is 0):
             return str(self.real)
+        elif(self.imag < 0.000001):
+            return str(self.real)
+        elif(self.real < 0.000001):
+            if(self.imag < 0):
+                return "-i" + str(self.imag*-1)
+            else:
+                return "i" + str(self.imag)
         else:
             return str(self.real) + " + i" + str(self.imag)
             

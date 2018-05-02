@@ -64,8 +64,8 @@ class fft(object):
 
         newPolynomial = self.convertPolynomial(polynomial, newSize)
 
-        for element in newPolynomial:
-            print(element.toString())
+        # for element in newPolynomial:
+        #     print(element.toString())
 
         # exit(1)
 
@@ -89,9 +89,9 @@ class fft(object):
                 else:
                     oddCoefficients.append(polynomial[i])
 
-            print("polynomial: " + str(polynomial))
-            print("even: " + str(evenCoefficients))
-            print("odd: " + str(oddCoefficients))
+            # print("polynomial: " + str(polynomial))
+            # print("even: " + str(evenCoefficients))
+            # print("odd: " + str(oddCoefficients))
             # print("root of unity: " + rootOfUnity.toString())
 
             # rootOfUnity.complexSquare()           
@@ -109,7 +109,7 @@ class fft(object):
 
                 while j < size/2:
                     temp = x.multiply2(FOdd[j])
-                    print("temp = " + temp.toString())
+                    # print("temp = " + temp.toString())
                     F[j] = FEven[j].add2(temp)
 
                     temp = x.multiply2(FOdd[j])
