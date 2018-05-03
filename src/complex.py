@@ -10,6 +10,7 @@ class Complex(object):
         self.real += complex.real
         self.imag += complex.imag
     
+    # Return new Complex equal to the addition of this complex number and the provided number
     def add2(self, complex):
         return Complex(self.real + complex.real, self.imag + complex.imag)
 
@@ -18,6 +19,7 @@ class Complex(object):
         self.real -= complex.real
         self.imag -= complex.imag
 
+    # Return new Complex equal to the difference of this complex number and the provided number
     def subtract2(self, complex):
         return Complex(self.real - complex.real, self.imag - complex.imag)
 
@@ -26,15 +28,19 @@ class Complex(object):
         self.real = (self.real * complex.real) - (self.imag * complex.imag)
         self.imag = (self.real * complex.imag) + (complex.real * self.imag)
 
+    # Return new Complex equal to the product of this complex number and the provided number
     def multiply2(self,complex):
         return Complex((self.real * complex.real) - (self.imag * complex.imag), (self.real * complex.imag) + (complex.real * self.imag))
 
+    # Get the real component (R) of complex number 
     def getReal(self):
         return self.real
 
+    # Get the imaginary component (C) of complex number
     def getImaginary(self):
         return self.imag
 
+    # Calculate magnitude of a complex number
     def getMagnitude(self):
         return sqrt(pow(self.real, 2) + pow(self.imag, 2))
 
