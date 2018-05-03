@@ -1,0 +1,185 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+ 
+\documentclass[12pt]{article}
+    \usepackage{graphicx} %Needed for logos
+    \usepackage{tikz}
+    \usetikzlibrary{matrix,calc} 
+    \usepackage{fancyhdr}
+    \pagestyle{fancy}
+    \fancyhead[L]{Left}
+    \fancyhead[R]{Right} 
+    \fancyhead[C]{Center}
+    \usepackage{lastpage}
+    \usepackage{float}
+    \usepackage{amsmath}
+    \usepackage{enumerate,letltxmacro}
+    \LetLtxMacro\itemold\item
+    \renewcommand{\item}{\itemindent1cm\itemold}
+    \usepackage{enumitem} 
+    \usepackage{verbatim} 
+    \usepackage[english]{babel}
+    \usepackage{blindtext}
+    \usepackage{varwidth}
+    \setlength\parindent{24pt}
+    \usepackage{booktabs} 
+    \usepackage{tabularx}
+    \newcolumntype{C}{>{\centering\arraybackslash}X}
+    \usepackage{bm}  
+    \usepackage[object=vectorian]{pgfornament} 
+    \usepackage{tikzpagenodes}
+    \usepackage{lipsum}
+    \usepackage{booktabs,pdflscape,adjustbox} 
+    \usepackage{abstract}
+    \usepackage{setspace}
+    \usepackage{ragged2e}
+    \usepackage{listings}
+    \usepackage{color, xcolor}
+    \usepackage{fancybox}
+    \usepackage{hyperref}
+    \usepackage{fontawesome}
+    \usepackage{subcaption}
+    \usetikzlibrary{arrows,positioning,automata}
+    \usepackage{tkz-graph}
+    
+    \usepackage[margin=0.95in]{geometry}
+    
+    %----------------------------------------------------------------------------------------
+    %	TITLE PAGE
+    %----------------------------------------------------------------------------------------
+    
+    \newcommand*{\titleGP}{\begingroup % Create the command for including the title page in the document
+    \centering % Center all text
+    \vspace*{\baselineskip} % White space at the top of the page
+    \vspace*{-1.0cm}
+    \centerline{\rule{17cm}{1.6pt}}\vspace*{-\baselineskip}\vspace*{2pt} % Thick horizontal line
+    \centerline{\rule{17cm}{0.4pt}}\ \\[\baselineskip] % Thin horizontal line
+    
+    {\LARGE 332:573 -- Data Structures \& Algorithms \\ \Large Project Report \\ \vspace*{0.3cm} \large Improvements to Polynomial Multiplication Through Fast Fourier Transforms\vspace*{0.2cm}\small \\By David Lambropoulos, Demetrios Lambropoulos}
+    % Title 
+    
+    \centerline{\rule{17cm}{0.4pt}}\vspace*{-\baselineskip}\vspace{3.2pt} % Thin horizontal line
+    \centerline{\rule{17cm}{1.6pt}}\ \\[\baselineskip] % Thick horizontal line
+    \vspace*{-0.35cm}Professor Shantenu Jha\par
+    May $\text{6}^\text{th}$, 2018\par
+    \vfill 
+    \vspace*{10.3cm}
+    \centerline{\includegraphics[scale=0.5]{images/rulogo}} 
+    \textit{Rutgers University}\par
+    \textit{School of Engineering}\par
+    
+    \vspace*{2\baselineskip} % Whitespace between location/year and editors
+    
+    \vfill % Whitespace between editor names and publisher logo
+    
+        
+    \endgroup}
+    
+    %----------------------------------------------------------------------------------------
+    %   CENTERED BOX
+    %----------------------------------------------------------------------------------------
+    \makeatletter
+    \newenvironment{CenteredBox}{% 
+    \begin{Sbox}}{% Save the content in a box
+    \end{Sbox}\centerline{\parbox{\wd\@Sbox}{\TheSbox}}}% And output it centered
+    \makeatother
+        
+        
+    %----------------------------------------------------------------------------------------
+    %   LSTLISTING CODE DEFINITION
+    %----------------------------------------------------------------------------------------
+    \definecolor{codegreen}{rgb}{0,0.6,0}
+    \definecolor{codegray}{rgb}{0.5,0.5,0.5}
+    \definecolor{codepurple}{rgb}{0.58,0,0.82}
+    \definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+        
+    \lstdefinestyle{mystyle}{
+        backgroundcolor=\color{backcolour},   
+        commentstyle=\color{codegreen},
+        keywordstyle=\color{magenta},
+        numberstyle=\tiny\color{codegray},
+        stringstyle=\color{codepurple},
+        basicstyle=\footnotesize,
+        breakatwhitespace=false,         
+        breaklines=true,                 
+        captionpos=b,                    
+        keepspaces=true,                 
+        numbers=left,                    
+        numbersep=5pt,                  
+        showspaces=false,                
+        showstringspaces=false,
+        showtabs=false,                  
+        tabsize=4
+    }
+    
+    %----------------------------------------------------------------------------------------
+    %	BUILD HEADER
+    %----------------------------------------------------------------------------------------
+    
+    % Length to control the \fancyheadoffset and the calculation of \headline
+    % simultaneously
+    \newlength\FHoffset
+    \setlength\FHoffset{1cm}
+    
+    \addtolength\headwidth{2\FHoffset}
+    
+    \fancyheadoffset{\FHoffset}
+    
+    % these lengths will control the headrule trimming to the left and right  
+    \newlength\FHleft
+    \newlength\FHright
+    
+    % here the trimmings are controlled by the user
+    \setlength\FHleft{1cm} 
+    \setlength\FHright{0cm}
+    
+    % The new definition of headrule that will take into acount the trimming(s)
+    \newbox\FHline
+    \setbox\FHline=\hbox{\hsize=\paperwidth%
+        \hspace*{\FHleft}%
+        \rule{\dimexpr\headwidth-\FHleft-\FHright\relax}{\headrulewidth}\hspace*{\FHright}%
+    }
+    \renewcommand\headrule{} 
+    
+    
+    %----------------------------------------------------------------------------------------
+    %	BODY OF DOCUMENT
+    %----------------------------------------------------------------------------------------
+    
+    \begin{document}    
+        \pagestyle{empty} % Removes page numbers 
+        \onecolumn
+        \titleGP % This command includes the title page
+        \newpage
+        \renewcommand*\contentsname{Contents}
+        \tableofcontents
+        \newpage 
+        
+        \setcounter{page}{1}
+        \pagestyle{fancy}
+        \lhead{David, Demetrios\\} 
+        \chead{NetID: dal220, dpl60\\ \myrule} 
+        \rhead{332:573 -- Algorithms\\ \myrule}
+        \lfoot{\vspace*{-0.1cm}\myrule \\ \vspace*{0.1cm}Project Report -- FFT Improvements to Polynomial Multiplication}
+        \cfoot{}
+        \rfoot{\vspace*{-0.1cm}\myrule \\\vspace*{0.1cm}Page - \thepage{} }
+        
+        \newcommand\myrule{%
+            \leavevmode\cleaders\hbox{\raisebox{-2.5pt}{\pgfornament[width=0.2\textwidth]{88}}}\hfill\kern0pt}
+
+        
+        \section{Introduction/Motivation}
+        \section{Algorithms/Theory}
+        \section{Experimental Setup}
+        \section{Results and Analysis}
+        \section{Discussion}
+        \cite{test}
+        
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        %%% INCLUDE BIBLIOGRAPHY %%%
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        \bibliography{Report.bib}
+        \bibliographystyle{ieeetr}
+
+    \end{document}    
