@@ -7,7 +7,9 @@ from traceback import print_stack
 
 class fft(object):
     def __init__(self):
-        self.x = 0
+        self.assignments = 0
+        self.comparisons = 0
+        self.exchanges = 0
 
     def printException(self, printStack=False):
         # Returns thread and current frame stack specifc information. 
@@ -37,19 +39,42 @@ class fft(object):
         print('[{}: {}] caused by "{}", at line {} in function {} in file {}'.format(exceptionName, exceptionObject, line.strip(), lineno, function, filename))
         
 
+    # Create array of Roots of unity
     def getRootOfUnity(self, size):
-        return Complex(cos(2*pi/size), sin(2*pi/size))
+        roots = []
+        i = 0
 
+        while i < size:
+            roots.append(Complex(cos(2*i*pi/size), sin(2*i*pi/size)))
+
+            i += 1
+
+        return roots
+
+    # Create array of inverse Roots of unity
+    def getInverseRootsOfUnity(self, size):
+        roots = []
+        i = 0
+
+        while i < size:
+            roots.append(Complex(cos(2*i*pi/size), -1*sin(2*i*pi/size)))
+
+            i += 1
+
+        return roots
+
+    # Convert polynomial (list of coefficients) to list of Complex objects 
     def convertPolynomial(self, polynomial, newSize):
         newPoly = []
 
         i = 0
+
         try:    
             for coefficient in polynomial:
                 newPoly.append(Complex(coefficient, 0))
                 i += 1
 
-            while i <= newSize:
+            while i < newSize:
                 newPoly.append(Complex(0, 0))
 
                 i += 1
@@ -60,21 +85,20 @@ class fft(object):
         return newPoly 
 
     def fastFourierTransform(self, polynomial, newSize):
-        size = len(polynomial)
+        tempSize = newSize
+        temp = 2
 
-        newPolynomial = self.convertPolynomial(polynomial, newSize)
+        while tempSize > temp:
+            temp *= 2
+        
+        print(temp)
+        tempSize = temp
 
-        # for element in newPolynomial:
-        #     print(element.toString())
+        newPolynomial = self.convertPolynomial(polynomial, tempSize)
 
-        # exit(1)
+        return self.__fastFourierTransform(len(newPolynomial), newPolynomial, self.getRootOfUnity(len(newPolynomial)), 1)
 
-        return self.__fastFourierTransform(len(newPolynomial), newPolynomial, self.getRootOfUnity(len(newPolynomial)))
-
-    def __fastFourierTransform(self, size, polynomial, rootOfUnity):
-        print("size = " + str(size))
-        print("w = " + rootOfUnity.toString())
-
+    def __fastFourierTransform(self, size, polynomial, rootsOfUnity, power):
         if size is 1:
             return polynomial
         else:
@@ -89,15 +113,9 @@ class fft(object):
                 else:
                     oddCoefficients.append(polynomial[i])
 
-            # print("polynomial: " + str(polynomial))
-            # print("even: " + str(evenCoefficients))
-            # print("odd: " + str(oddCoefficients))
-            # print("root of unity: " + rootOfUnity.toString())
-
-            # rootOfUnity.complexSquare()           
-
-            FEven = self.__fastFourierTransform(int(size/2), evenCoefficients, rootOfUnity.multiply2(rootOfUnity))
-            FOdd = self.__fastFourierTransform(int(size/2), oddCoefficients, rootOfUnity.multiply2(rootOfUnity))
+            # Do FFT of each half
+            FEven = self.__fastFourierTransform(int(size/2), evenCoefficients, rootsOfUnity, power*2)
+            FOdd = self.__fastFourierTransform(int(size/2), oddCoefficients, rootsOfUnity, power*2)
         
             try:
                 F = []
@@ -105,17 +123,13 @@ class fft(object):
                     F.append(Complex(0,0))
                 
                 j = 0
-                x = Complex(1,0)
 
                 while j < size/2:
-                    temp = x.multiply2(FOdd[j])
-                    # print("temp = " + temp.toString())
+                    temp = rootsOfUnity[j*power].multiply2(FOdd[j])
+                    
                     F[j] = FEven[j].add2(temp)
-
-                    temp = x.multiply2(FOdd[j])
                     F[j+int(size/2)] = FEven[j].subtract2(temp)
                 
-                    x.multiply(rootOfUnity)
                     j += 1
             except:
                 self.printException()
@@ -125,4 +139,4 @@ class fft(object):
     def inverseFastFourierTransform(self, polynomial):
         size = len(polynomial)
 
-        return self.__fastFourierTransform(size, polynomial, self.getRootOfUnity(size).getInverse2())
+        return self.__fastFourierTransform(size, polynomial, self.getInverseRootsOfUnity(size), 1)
