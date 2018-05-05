@@ -45,6 +45,7 @@ class fft(object):
         i = 0
 
         while i < size:
+
             roots.append(Complex(cos(2*i*pi/size), sin(2*i*pi/size)))
 
             i += 1
@@ -91,11 +92,10 @@ class fft(object):
         while tempSize > temp:
             temp *= 2
         
-        print(temp)
         tempSize = temp
 
         newPolynomial = self.convertPolynomial(polynomial, tempSize)
-
+        
         return self.__fastFourierTransform(len(newPolynomial), newPolynomial, self.getRootOfUnity(len(newPolynomial)), 1)
 
     def __fastFourierTransform(self, size, polynomial, rootsOfUnity, power):
@@ -109,8 +109,10 @@ class fft(object):
             # O(m)
             for i in range(0, size):
                 if i%2 is 0:
+                    self.assignments += 1
                     evenCoefficients.append(polynomial[i])
                 else:
+                    self.assignments += 1
                     oddCoefficients.append(polynomial[i])
 
             # Do FFT of each half
@@ -125,11 +127,13 @@ class fft(object):
                 j = 0
 
                 while j < size/2:
-                    temp = rootsOfUnity[j*power].multiply2(FOdd[j])
-                    
+                    self.comparisons += 1
+
+                    temp = rootsOfUnity[j*power].multiply2(FOdd[j]) 
                     F[j] = FEven[j].add2(temp)
                     F[j+int(size/2)] = FEven[j].subtract2(temp)
-                
+                    self.assignments += 3
+
                     j += 1
             except:
                 self.printException()
@@ -138,5 +142,8 @@ class fft(object):
 
     def inverseFastFourierTransform(self, polynomial):
         size = len(polynomial)
-
+        
         return self.__fastFourierTransform(size, polynomial, self.getInverseRootsOfUnity(size), 1)
+
+    def getStatistics(self):
+        return [self.assignments, self.comparisons, self.exchanges]

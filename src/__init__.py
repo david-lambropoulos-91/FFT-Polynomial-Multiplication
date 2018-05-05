@@ -12,11 +12,13 @@ def main(argc, argv):
     poly = polynomial()
 
     print("Using Brute Force")
-    poly.bruteForceMultiply([1, 0, 1, 3], [1, 2, 1, 3])
+    poly.bruteForceMultiply("8192coefficients.txt","8192coefficients.txt")
+    poly.printStatistics()
     print("\nUsing FFT")
 
     try:
-        poly.fastMultiply([1, 0, 1, 3], [1, 2, 1, 3])
+        print(poly.fastMultiply("8192coefficients.txt","8192coefficients.txt"))
+        poly.printStatistics()
     except Exception as e:
         print(e)
 
