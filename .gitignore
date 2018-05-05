@@ -27,3 +27,4 @@ wheels/
 .installed.cfg
 *.egg
 MANIFEST
+data/
