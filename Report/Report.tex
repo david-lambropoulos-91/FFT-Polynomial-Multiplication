@@ -203,18 +203,26 @@
         \section{Results and Analysis} 
         \begin{figure}[H]
             \centerline{\includegraphics[scale=0.5]{images/BruteVSFFT_8192_Comparisons}}
+            \caption{Number of Comparisons. FFT vs Brute Force.}
+            \label{fig:comp8192} 
         \end{figure}
         \begin{figure}[H]
             \centerline{\includegraphics[scale=0.5]{images/BruteVSFFT_ZoomIn_Comparisons}}
+            \caption{Number of Comparisons. FFT vs Brute Force.}
+            \label{fig:compZoom}
         \end{figure}
         \begin{figure}[H]
             \centerline{\includegraphics[scale=0.5]{images/BruteVSFFT_8192}}
+            \caption{Number of Assignments. FFT vs Brute Force.}
+            \label{fig:assign8192}
         \end{figure} 
         \begin{figure}[H]
             \centerline{\includegraphics[scale=0.5]{images/BruteVSFFT_ZoomIn}}
+            \caption{Number of Assignments. FFT vs Brute Force.}
+            \label{fig:assignZoom}
         \end{figure}
         \section{Discussion}
-        \cite{test}
+        \indent\par{Brute Force performs better for smaller degree polynomials (i.e. $< 45$ terms). Fast Fourier transforms have an overhead, however it quickly overcomes its quadratic counterpart.}
         
         %%%%%%%%%%%%%%%%%%%%%%%%%%%%
         %%% INCLUDE BIBLIOGRAPHY %%%

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  6 MAY 2018 13:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  6 MAY 2018 13:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1114,7 +1114,7 @@ File: images/BruteVSFFT_ZoomIn_Comparisons.png Graphic file (type png)
 
 <use images/BruteVSFFT_ZoomIn_Comparisons.png>
 Package pdftex.def Info: images/BruteVSFFT_ZoomIn_Comparisons.png used on input
- line 208.
+ line 210.
 (pdftex.def)             Requested size: 215.30383pt x 168.25317pt.
 
 (/usr/local/texlive/2017/texmf-dist/tex/generic/pgfornament/vectorian/vectorian
@@ -1128,20 +1128,20 @@ Package pdftex.def Info: images/BruteVSFFT_ZoomIn_Comparisons.png used on input
 }) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.209         \end{figure}
+l.213         \end{figure}
                            [2]
 <images/BruteVSFFT_8192.png, id=70, 442.65375pt x 356.83313pt>
 File: images/BruteVSFFT_8192.png Graphic file (type png)
 
 <use images/BruteVSFFT_8192.png>
-Package pdftex.def Info: images/BruteVSFFT_8192.png used on input line 211.
+Package pdftex.def Info: images/BruteVSFFT_8192.png used on input line 215.
 (pdftex.def)             Requested size: 221.32632pt x 178.41612pt.
 
 <images/BruteVSFFT_ZoomIn.png, id=71, 456.95718pt x 358.33875pt>
 File: images/BruteVSFFT_ZoomIn.png Graphic file (type png)
 
 <use images/BruteVSFFT_ZoomIn.png>
-Package pdftex.def Info: images/BruteVSFFT_ZoomIn.png used on input line 214.
+Package pdftex.def Info: images/BruteVSFFT_ZoomIn.png used on input line 220.
 (pdftex.def)             Requested size: 228.47803pt x 179.16893pt.
 
 (/usr/local/texlive/2017/texmf-dist/tex/generic/pgfornament/vectorian/vectorian
@@ -1152,8 +1152,7 @@ Package pdftex.def Info: images/BruteVSFFT_ZoomIn.png used on input line 214.
 88.pgf)
 (/usr/local/texlive/2017/texmf-dist/tex/generic/pgfornament/vectorian/vectorian
 88.pgf) [3 <./images/BruteVSFFT_8192_Comparisons.png> <./images/BruteVSFFT_Zoom
-In_Comparisons.png> <./images/BruteVSFFT_8192.png>] (./Report.bbl)
-
+In_Comparisons.png>] (./Report.bbl) 
 AED: lastpage setting LastPage
 
 (/usr/local/texlive/2017/texmf-dist/tex/generic/pgfornament/vectorian/vectorian
@@ -1163,21 +1162,22 @@ AED: lastpage setting LastPage
 (/usr/local/texlive/2017/texmf-dist/tex/generic/pgfornament/vectorian/vectorian
 88.pgf)
 (/usr/local/texlive/2017/texmf-dist/tex/generic/pgfornament/vectorian/vectorian
-88.pgf) [4 <./images/BruteVSFFT_ZoomIn.png>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 225.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 225.
- (./Report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 225.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 225.
+88.pgf) [4 <./images/BruteVSFFT_8192.png> <./images/BruteVSFFT_ZoomIn.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 233.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 233.
+
+(./Report.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 233.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 233.
 Package rerunfilecheck Info: File `Report.out' has not changed.
 (rerunfilecheck)             Checksum: 3F1126751A8B8A214B268D174D0E9079;263.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 225.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 233.
  ) 
 Here is how much of TeX's memory you used:
- 24381 strings out of 492995
- 453348 string characters out of 6132704
- 656664 words of memory out of 5000000
- 27398 multiletter control sequences out of 15000+600000
+ 24385 strings out of 492995
+ 453408 string characters out of 6132704
+ 657956 words of memory out of 5000000
+ 27402 multiletter control sequences out of 15000+600000
  12904 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  59i,16n,94p,501b,614s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1193,10 +1193,10 @@ texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/t
 exlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/tex
 live/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texl
 ive/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on Report.pdf (6 pages, 343436 bytes).
+Output written on Report.pdf (6 pages, 344206 bytes).
 PDF statistics:
- 137 PDF objects out of 1000 (max. 8388607)
- 104 compressed objects within 2 object streams
+ 136 PDF objects out of 1000 (max. 8388607)
+ 103 compressed objects within 2 object streams
  19 named destinations out of 1000 (max. 500000)
  83 words of extra memory for PDF output out of 10000 (max. 10000000)
 
