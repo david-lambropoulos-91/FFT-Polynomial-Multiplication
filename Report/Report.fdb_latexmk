@@ -1,18 +1,18 @@
 # Fdb version 3
-["bibtex Report"] 1525606403 "Report.aux" "Report.bbl" "Report" 1525606482
-  "Report.aux" 1525606481 1478 5bd99e50a5b2be5be3d24a0a4e7cbde4 ""
+["bibtex Report"] 1525606403 "Report.aux" "Report.bbl" "Report" 1525609811
+  "Report.aux" 1525609811 1478 5bd99e50a5b2be5be3d24a0a4e7cbde4 ""
   "Report.bib" 1525359408 74 11705922a7e590b2d211f2be5e5e1b36 ""
   "c:/texlive/2017/texmf-dist/bibtex/bst/base/ieeetr.bst" 1496899483 18361 1a00e58565e7f19bf2b3e1bfb82254ae ""
   (generated)
-  "Report.bbl"
   "Report.blg"
-["pdflatex"] 1525606479 "c:/Users/Chronos/Desktop/FFT Polynomial Multiplication/Report/Report.tex" "Report.pdf" "Report" 1525606482
-  "Report.aux" 1525606481 1478 5bd99e50a5b2be5be3d24a0a4e7cbde4 ""
+  "Report.bbl"
+["pdflatex"] 1525609808 "c:/Users/Chronos/Desktop/FFT Polynomial Multiplication/Report/Report.tex" "Report.pdf" "Report" 1525609811
+  "Report.aux" 1525609811 1478 5bd99e50a5b2be5be3d24a0a4e7cbde4 ""
   "Report.bbl" 1525606403 98 f5668178fca385828badc214b7788b67 "bibtex Report"
-  "Report.out" 1525606481 263 3f1126751a8b8a214b268d174d0e9079 ""
-  "Report.tex" 1525606479 7675 38fc1cf6cc9694b0e48658ac7ad0bd0d ""
-  "Report.toc" 1525606481 390 9886d41954d60fb25bea7f75fb5c8a99 ""
-  "c:/Users/Chronos/Desktop/FFT Polynomial Multiplication/Report/Report.tex" 1525606479 7675 38fc1cf6cc9694b0e48658ac7ad0bd0d ""
+  "Report.out" 1525609811 263 3f1126751a8b8a214b268d174d0e9079 ""
+  "Report.tex" 1525609807 7676 58272d4de775e6f60d6ed9432d6d4f21 ""
+  "Report.toc" 1525609811 390 9886d41954d60fb25bea7f75fb5c8a99 ""
+  "c:/Users/Chronos/Desktop/FFT Polynomial Multiplication/Report/Report.tex" 1525609807 7676 58272d4de775e6f60d6ed9432d6d4f21 ""
   "c:/texlive/2017/texmf-dist/fonts/map/fontname/texfonts.map" 1496900358 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "c:/texlive/2017/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm" 1496899223 1124 14ccf5552bc7f77ca02a8a402bea8bfb ""
   "c:/texlive/2017/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy8.tfm" 1496899223 1120 200be8b775682cdf80acad4be5ef57e4 ""
@@ -207,11 +207,11 @@
   "images/BruteVSFFT_8192.png" 1525545963 21855 7e639d3c6ad63faf36a40950ec837c91 ""
   "images/BruteVSFFT_8192_Comparisons.png" 1525546530 21649 c847998755d6c8dd5785f09a1a96bf30 ""
   "images/BruteVSFFT_ZoomIn.png" 1525545772 24228 71830d7bbcd26ba02449c7363774bb3b ""
-  "images/BruteVSFFT_ZoomIn_Comparisons.png" 1525546416 24016 1cf5e0e41b0578139b904b1203119075 ""
+  "images/BruteVSFFT_ZoomIn_Comparisons.png" 1525607305 22791 d3ca625e2cf7776ac460a6640fc8f4e6 ""
   "images/rulogo.jpg" 1517953156 41391 fa8eefff9e8aa94255f4e829b840ee71 ""
   (generated)
-  "Report.out"
-  "Report.log"
-  "Report.pdf"
   "Report.aux"
   "Report.toc"
+  "Report.pdf"
+  "Report.out"
+  "Report.log"
