@@ -1,18 +1,18 @@
 # Fdb version 3
-["bibtex Report"] 1525359769 "Report.aux" "Report.bbl" "Report" 1525359772
-  "Report.aux" 1525359771 1478 1128bb50afad079c19f7792b5846e407 ""
+["bibtex Report"] 1525606403 "Report.aux" "Report.bbl" "Report" 1525606482
+  "Report.aux" 1525606481 1478 5bd99e50a5b2be5be3d24a0a4e7cbde4 ""
   "Report.bib" 1525359408 74 11705922a7e590b2d211f2be5e5e1b36 ""
   "c:/texlive/2017/texmf-dist/bibtex/bst/base/ieeetr.bst" 1496899483 18361 1a00e58565e7f19bf2b3e1bfb82254ae ""
   (generated)
   "Report.bbl"
   "Report.blg"
-["pdflatex"] 1525359770 "c:/Users/Chronos/Desktop/FFT Polynomial Multiplication/Report/Report.tex" "Report.pdf" "Report" 1525359772
-  "Report.aux" 1525359771 1478 1128bb50afad079c19f7792b5846e407 ""
-  "Report.bbl" 1525359770 98 f5668178fca385828badc214b7788b67 "bibtex Report"
-  "Report.out" 1525359771 263 3f1126751a8b8a214b268d174d0e9079 ""
-  "Report.tex" 1525359766 7139 40f7b5f7d4c1294d5d097769b165c483 ""
-  "Report.toc" 1525359771 390 02be9e0fbf6290b2ec8a0acaac73b2bf ""
-  "c:/Users/Chronos/Desktop/FFT Polynomial Multiplication/Report/Report.tex" 1525359766 7139 40f7b5f7d4c1294d5d097769b165c483 ""
+["pdflatex"] 1525606479 "c:/Users/Chronos/Desktop/FFT Polynomial Multiplication/Report/Report.tex" "Report.pdf" "Report" 1525606482
+  "Report.aux" 1525606481 1478 5bd99e50a5b2be5be3d24a0a4e7cbde4 ""
+  "Report.bbl" 1525606403 98 f5668178fca385828badc214b7788b67 "bibtex Report"
+  "Report.out" 1525606481 263 3f1126751a8b8a214b268d174d0e9079 ""
+  "Report.tex" 1525606479 7675 38fc1cf6cc9694b0e48658ac7ad0bd0d ""
+  "Report.toc" 1525606481 390 9886d41954d60fb25bea7f75fb5c8a99 ""
+  "c:/Users/Chronos/Desktop/FFT Polynomial Multiplication/Report/Report.tex" 1525606479 7675 38fc1cf6cc9694b0e48658ac7ad0bd0d ""
   "c:/texlive/2017/texmf-dist/fonts/map/fontname/texfonts.map" 1496900358 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "c:/texlive/2017/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm" 1496899223 1124 14ccf5552bc7f77ca02a8a402bea8bfb ""
   "c:/texlive/2017/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy8.tfm" 1496899223 1120 200be8b775682cdf80acad4be5ef57e4 ""
@@ -204,10 +204,14 @@
   "c:/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1496902845 2373944 2abcadc89c0726ad4f6e752a9424ed70 ""
   "c:/texlive/2017/texmf-var/web2c/pdftex/pdflatex.fmt" 1496902936 4125893 6301fda1221eccdddd61b456d6a2127c ""
   "c:/texlive/2017/texmf.cnf" 1496902825 673 4ae7b2f49cee444c5343a45b5d0f169c ""
+  "images/BruteVSFFT_8192.png" 1525545963 21855 7e639d3c6ad63faf36a40950ec837c91 ""
+  "images/BruteVSFFT_8192_Comparisons.png" 1525546530 21649 c847998755d6c8dd5785f09a1a96bf30 ""
+  "images/BruteVSFFT_ZoomIn.png" 1525545772 24228 71830d7bbcd26ba02449c7363774bb3b ""
+  "images/BruteVSFFT_ZoomIn_Comparisons.png" 1525546416 24016 1cf5e0e41b0578139b904b1203119075 ""
   "images/rulogo.jpg" 1517953156 41391 fa8eefff9e8aa94255f4e829b840ee71 ""
   (generated)
-  "Report.toc"
-  "Report.pdf"
-  "Report.aux"
   "Report.out"
   "Report.log"
+  "Report.pdf"
+  "Report.aux"
+  "Report.toc"
