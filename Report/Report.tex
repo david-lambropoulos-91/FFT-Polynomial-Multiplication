@@ -199,6 +199,7 @@
         $$X(n)=\sum_{k=0}^{N-1}x[k]e^{-j(2\pi kn/N)}$$
         \indent\par{The DFT algorithm can easily be seen that there are $N$ additions by $N$ multiplications resulting in a runtime of $O(N^2)$. The FFT factors the DFT matrix into sparse factors resulting in a runtime of $O(N log N)$.}
         \section{Experimental Setup}
+        \indent\par{The datasets that were used in the program were randomly generated with $generateDatasets.py$ file. This generated datasets of sizes 1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, and 4096. The experiment was run on Windows (Processor Intel (R) Core (TM) i7-3630QM CPU @ 2.40GHz, 2401 Mhz, 4 Cores(s), 8 Logical Processor, 8GB RAM) running Windows 10. The program was implemented with Python 3.6.}
         \section{Results and Analysis} 
         \begin{figure}[H]
             \centerline{\includegraphics[scale=0.5]{images/BruteVSFFT_8192_Comparisons}}
