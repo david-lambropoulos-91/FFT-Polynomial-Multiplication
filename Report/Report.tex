@@ -176,14 +176,18 @@
         \par{where $a_0,...,a_n$ are constants and x is the indeterminate variable. Polynomials can also be expressed in the following canonical form}
         $$ \sum_{k=0}^{n}a_kx^k $$
         \indent\par{Each term in a polynomial is product of some constant called the coefficient of the term and indeterminate raised to a nonnegative integer power n (i.e.$n\in\mathbb{Z}^+$). Polynomials are used in many fields to represent problems or model behavior such as Chemistry, Physics, Economics, Social Scientists, Calculus, Numerical Analysis, etc.}
-        \indent\par{The way polynomials are multiplied is through a method called First, Outer, Inner, Last (FOIL) as can be seen below in Figure \ref{fig:foil}. The issue with the FOIL method is that it requires too many operations to perform multiplications, especially for large polynomials. Usually real world problems will be modeled with polynomials of 10000+ terms.}
+        \indent\par{Addition and subtraction of polynomials is easy to implement costing only $O(N)$ time. However, the way polynomials are multiplied is through a method called First, Outer, Inner, Last (FOIL) as can be seen below in Figure \ref{fig:foil}. The issue with the FOIL method is that it requires too many operations to perform multiplications, especially for large polynomials. Usually real world problems will be modeled with polynomials of 10000+ terms.}
         \begin{figure}[H]
         	\centerline{\includegraphics[scale=0.5]{images/FOIL}}
         	\caption{Demonstration of FOIL method}
         	\label{fig:foil}
         \end{figure}
     	\indent\par{The main scientific motivation behind improving the speed in which we multiple polynomials is that solving large polynomials by hand is tedious and error prone. As discussed previous solving large polynomial multiplications through quadratic algorithms (i.e. FOIL) would cost more time than any person might have. A way that can fix this costly calculation is to implement recursion which uses the divide and conquer method.}
+    	
         \section{Algorithms/Theory}
+        \indent\par{Given a polynomial $A(x)$ of length $m$ and a secondary polynomial $B(x)$ of length $n$ then the resultant product would have a length of $m+n-1$. As mentioned before, a polynomial can be represented as a sum of terms consisting of constant coefficients and indeterminate variables as follows: }
+        $$A(x) = \sum_{k=0}^{n}a_kx^k = a_nx^n + a_{n-1}x^{n-2} + ... + a_1x + a_0$$
+        \indent\par{When representing a polynomial in code, we can represent as an array of coefficients in reverse order ($a = [a_0,a_1,...,a_{n-1}]$). The main advantage to representing this as such allows us to reference coefficients via array indexes. }
         \section{Experimental Setup}
         \section{Results and Analysis}
         \begin{figure}[H]
