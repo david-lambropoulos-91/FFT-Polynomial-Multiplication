@@ -188,6 +188,8 @@
         \indent\par{Given a polynomial $A(x)$ of length $m$ and a secondary polynomial $B(x)$ of length $n$ then the resultant product would have a length of $m+n-1$. As mentioned before, a polynomial can be represented as a sum of terms consisting of constant coefficients and indeterminate variables as follows: }
         $$A(x) = \sum_{k=0}^{n}a_kx^k = a_nx^n + a_{n-1}x^{n-2} + ... + a_1x + a_0$$
         \indent\par{When representing a polynomial in code, we can represent as an array of coefficients in reverse order ($a = [a_0,a_1,...,a_{n-1}]$). The main advantage to representing this as such allows us to reference coefficients via array indexes. }
+        \indent\par{The Fast Fourier Transform (FFT) is an improvement on the Discrete Fourier Transform (DFT) algorithm and has been recognized as on the best algorithms of the $20^{th}$ century\cite{dongarra2000guest}. The DFT is represented as: }
+        $$X(n)=\sum_{k=0}^{N-1}x[k]e^{-j(2\pi kn/N)}$$
         \section{Experimental Setup}
         \section{Results and Analysis} 
         \begin{figure}[H]
