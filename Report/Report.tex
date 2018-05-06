@@ -201,6 +201,7 @@
         \section{Experimental Setup}
         \indent\par{The datasets that were used in the program were randomly generated with $generateDatasets.py$ file. This generated datasets of sizes 1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, and 4096. The experiment was run on Windows (Processor Intel (R) Core (TM) i7-3630QM CPU @ 2.40GHz, 2401 Mhz, 4 Cores(s), 8 Logical Processor, 8GB RAM) running Windows 10. The program was implemented with Python 3.6.}
         \section{Results and Analysis} 
+        \indent\par{Too better see the competition of the Brute Force algorithm and the FFT algorithm we analyzed the results for polynomials less than degree 40. The output can be seen in Figures \ref{fig:assignZoom} and \ref{fig:compZoom}. The zoomed in FFT has less assignments and comparisons in the long run. However, there exists a small period where for small polynomials brute force outperforms the FFT. Next, looking at polynomials up to 8192 terms shows that the FFT almost disappears in comparison to the brute force algorithm. This can be seen in Figures \ref{fig:assign8192} and \ref{fig:comp8192}.}
         \begin{figure}[H]
             \centerline{\includegraphics[scale=0.5]{images/BruteVSFFT_8192_Comparisons}}
             \caption{Number of Comparisons. FFT vs Brute Force.}
