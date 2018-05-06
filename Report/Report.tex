@@ -176,7 +176,13 @@
         \par{where $a_0,...,a_n$ are constants and x is the indeterminate variable. Polynomials can also be expressed in the following canonical form}
         $$ \sum_{k=0}^{n}a_kx^k $$
         \indent\par{Each term in a polynomial is product of some constant called the coefficient of the term and indeterminate raised to a nonnegative integer power n (i.e.$n\in\mathbb{Z}^+$). Polynomials are used in many fields to represent problems or model behavior such as Chemistry, Physics, Economics, Social Scientists, Calculus, Numerical Analysis, etc.}
-        \indent\par{The way polynomials are multiplied is through a method called First, Outer, Inner, Last (FOIL) }
+        \indent\par{The way polynomials are multiplied is through a method called First, Outer, Inner, Last (FOIL) as can be seen below in Figure \ref{fig:foil}. The issue with the FOIL method is that it requires too many operations to perform multiplications, especially for large polynomials. Usually real world problems will be modeled with polynomials of 10000+ terms.}
+        \begin{figure}[H]
+        	\centerline{\includegraphics[scale=0.5]{images/FOIL}}
+        	\caption{Demonstration of FOIL method}
+        	\label{fig:foil}
+        \end{figure}
+    	\indent\par{The main scientific motivation behind improving the speed in which we multiple polynomials is that solving large polynomials by hand is tedious and error prone. As discussed previous solving large polynomial multiplications through quadratic algorithms (i.e. FOIL) would cost more time than any person might have. A way that can fix this costly calculation is to implement recursion which uses the divide and conquer method.}
         \section{Algorithms/Theory}
         \section{Experimental Setup}
         \section{Results and Analysis}
