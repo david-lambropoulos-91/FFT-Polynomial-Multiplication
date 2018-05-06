@@ -9,6 +9,8 @@ class polynomial(object):
         self.polynomial2 = []
 
     def readFile(self, filename1, filename2):
+        self.polynomial1 = []
+        self.polynomial2 = []
         # Read file from the user by going through line by line 
         # and extracting the numbers.
         print("Beginning to read data/" + filename1 + "...")
